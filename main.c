@@ -25,6 +25,9 @@ int main(int argc, char *argv[])
 	if (files == NULL)
 		exit(EXIT_FAILURE);
 
+	on_exit(free_stack, &stack);
+	on_exit(f_close, files);
+	on_exit(free_line, &line);
 	while (getline(&line, &line_len, files) != -1)
 	{
 		line_num++;
@@ -34,8 +37,5 @@ int main(int argc, char *argv[])
 		free(line);
 		line = NULL;
 	}
-	free_stack(&stack);
-	free(line);
-	fclose(files);
 	exit(EXIT_SUCCESS);
 }

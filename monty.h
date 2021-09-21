@@ -63,7 +63,11 @@ void _pall(stack_t **stack, unsigned int line_munber);
 /*add_node.c*/
 stack_t *add_node(stack_t **stack, const int n);
 /*free.c*/
-void free_stack(stack_t **stack);
+void free_stack(int status, void *arg);
+void free_line(int status, void *arg);
+void f_close(int status, void *arg);
+/*nop.c*/
+void _nop(stack_t **stack, unsigned int line_number);
 
 void _pint(stack_t **stack, unsigned int line_number);
 #endif /*_MONTY_H_*/
