@@ -6,7 +6,6 @@ void _push(stack_t **stack, unsigned int line_number)
 	int n;
 	
 	arg = strtok(NULL, " \t\r\n");
-	//printf("%s\n", arg);
 	if (arg == NULL)
 	{
 		printf("L%u: usage: push integer\n", line_number);
@@ -19,5 +18,4 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	var.stack_len++;
-	printf(">>>%ld\n", var.stack_len);
 }

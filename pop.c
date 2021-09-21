@@ -17,5 +17,4 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 	free(pop);
 	var.stack_len--;
-	printf(">>>%ld\n", var.stack_len);
 }
