@@ -1,42 +1,28 @@
 #include "monty.h"
 /**
- * main - main program
- * @argc: ...
- * @argv: ...
- * Return: EXIT_SUCCESS
+ * get_funs - Get the funs object
+ * @token: ...
+ * @stack: ...
+ * @line_number: ...
  */
-int main(int argc, char *argv[])
+void get_funs(char *token, stack_t **stack, unsigned int line_number)
 {
-	var_t var;
-	stack_t *stack = NULL;
-	FILE *files = NULL;
-	char *line = NULL, *token = NULL;
-	size_t line_len = 0;
-	unsigned int line_num = 0;
+	unsigned int iter;
+	instruction_t validation[] = {
+		{"push", _push},
+		{"pop", _pop},
+		{"pall", _pall},
+		{"pint", _pint},
+		{NULL, NULL}
+	};
 
-	var.queue = 0;
-	var.stack_len = 0;
-	if (argc != 2)
+	for (iter = 0; validation[iter].opcode != NULL; iter++)
 	{
-		printf("Usage: monty file\n");
-		exit(EXIT_FAILURE);
+		if (strcmp(validation[iter].opcode, token) == 0)
+		{
+			validation[iter].f(stack, line_number);
+			return;
+		}
 	}
-
-	files = fopen(argv[1], "r");
-	if (files == NULL)
-		exit(EXIT_FAILURE);
-
-	while (getline(&line, &line_len, files) != -1)
-	{
-		line_num++;
-		token = strtok(line, "\n\t\r ");
-		if (token != NULL && token[0] != '#')
-			get_funs(token, &stack, line_num);
-		free(line);
-		line = NULL;
-	}
-	free_stack(&stack);
-	free(line);
-	fclose(files);
-	exit(EXIT_SUCCESS);
+	exit(EXIT_FAILURE);
 }
