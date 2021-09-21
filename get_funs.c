@@ -13,6 +13,7 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 		{"pop", _pop},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
