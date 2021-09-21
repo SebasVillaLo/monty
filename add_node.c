@@ -1,16 +1,20 @@
 #include "monty.h"
-
+/**
+ * add_node - add a node to the stack allocated
+ * @n: ...
+ * @stack: ...
+ */
 stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *NewNode;
 
 	if (stack == NULL)
 		return (NULL);
-	
+
 	NewNode = malloc(sizeof(stack_t));
 	if (NewNode == NULL)
 		return (NULL);
-	
+
 	NewNode->n = n;
 	if (*stack == NULL)
 	{
