@@ -1,6 +1,7 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -62,7 +63,7 @@ void _pall(stack_t **stack, unsigned int line_munber);
 /*add_node.c*/
 stack_t *add_node(stack_t **stack, const int n);
 /*free.c*/
-void free_lineptr(int status, void *arg);
-void m_fs_close(int status, void *arg);
+void free_stack(stack_t **stack);
+
 void _pint(stack_t **stack, unsigned int line_number);
 #endif /*_MONTY_H_*/
