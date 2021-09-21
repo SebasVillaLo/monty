@@ -1,10 +1,23 @@
 #include "monty.h"
-
-void free_lineptr(int status, void *arg)
+/**
+ * free_stack - free the stack allocated
+ * @stack: the stack allocated
+ * Return: void
+ */
+void free_stack(stack_t **stack)
 {
-	char **lineptr = arg;
+	stack_t *next;
 
-	(void)status;
-	if (*lineptr != NULL)
-		free(*lineptr);
+	if (*stack)
+	{
+		(*stack)->prev->next = NULL;
+		(*stack)->prev = NULL;
+	}
+	while (*stack != NULL)
+	{
+		next = (*stack)->next;
+		free(*stack);
+		*stack = next;
+	}
+	var.stack_len = 0;
 }
