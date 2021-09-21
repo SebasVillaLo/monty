@@ -6,7 +6,6 @@
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	var_t var;
 	stack_t *head = *stack;
 
 	if (var.stack_len == 0)

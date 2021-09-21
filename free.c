@@ -6,7 +6,6 @@
  */
 void free_stack(stack_t **stack)
 {
-	var_t var;
 	stack_t *next;
 
 	if (*stack)

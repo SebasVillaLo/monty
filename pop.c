@@ -7,7 +7,6 @@
 void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *pop = *stack;
-	var_t var;
 
 	if (var.stack_len == 0)
 	{

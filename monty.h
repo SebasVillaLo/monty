@@ -20,7 +20,8 @@ typedef struct var_s
 	int queue;
 	size_t stack_len;
 } var_t;
-
+/*global var*/
+var_t var;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

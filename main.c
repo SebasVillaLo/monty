@@ -7,7 +7,6 @@
  */
 int main(int argc, char *argv[])
 {
-	var_t var;
 	stack_t *stack = NULL;
 	FILE *files = NULL;
 	char *line = NULL, *token = NULL;
