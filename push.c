@@ -1,10 +1,15 @@
 #include "monty.h"
-
+/**
+ * _push - add node to the stack allocated
+ * @stack: ...
+ * @line_number: ...
+ */
 void _push(stack_t **stack, unsigned int line_number)
 {
+	var_t var;
 	char *arg;
 	int n;
-	
+
 	arg = strtok(NULL, " \t\r\n");
 	if (arg == NULL)
 	{
