@@ -4,7 +4,7 @@
  * @argc: ...
  * @argv: ...
  * @int: ...
- * 
+ *
  * Return: EXIT_SUCCESS
  */
 int main(int argc, char *argv[])
@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	FILE *files = NULL;
 	char *line = NULL, *token = NULL;
-	unsigned int line_num = 0;
 	size_t line_len = 0;
+	unsigned int line_num = 0;
 
 	var.queue = 0;
 	var.stack_len = 0;
@@ -27,15 +27,17 @@ int main(int argc, char *argv[])
 	if (files == NULL)
 		exit(EXIT_FAILURE);
 
-	on_exit(free_lineptr, &line);
-
 	while (getline(&line, &line_len, files) != -1)
 	{
 		line_num++;
 		token = strtok(line, "\n\t\r ");
 		if (token != NULL && token[0] != '#')
 			get_funs(token, &stack, line_num);
+		free(line);
+		line = NULL;
 	}
+	free_stack(&stack);
+	free(line);
 	fclose(files);
 	exit(EXIT_SUCCESS);
 }
