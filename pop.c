@@ -1,11 +1,17 @@
 #include "monty.h"
-
+/**
+ * _pop - Delete the node
+ * @stack: ...
+ * @line_number: ...
+ */
 void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *pop = *stack;
+	var_t var;
 
 	if (var.stack_len == 0)
 	{
+		printf("L%u: can't pop an empty stack", line_number);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->prev = (*stack)->prev;
