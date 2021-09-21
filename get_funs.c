@@ -1,12 +1,17 @@
 #include "monty.h"
-
+/**
+ * get_funs - Get the funs object
+ * @token: ...
+ * @stack: ...
+ * @line_number: ...
+ */
 void get_funs(char *token, stack_t **stack, unsigned int line_number)
 {
 	unsigned int iter;
 	instruction_t validation[] = {
 		{"push", _push},
 		{"pop", _pop},
-		{"pall" , _pall},
+		{"pall", _pall},
 		{"pint", _pint},
 		{NULL, NULL}
 	};
@@ -19,5 +24,5 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	exit (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
