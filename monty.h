@@ -69,7 +69,7 @@ void f_close(int status, void *arg);
 /*swap.c*/
 void n_swap(stack_t **stack, unsigned int line_number);
 /*add.c*/
-void _add(stack_t *stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 /*nop.c*/
 void _nop(stack_t **stack, unsigned int line_number);
 
