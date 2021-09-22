@@ -29,6 +29,7 @@ stack_t *add_node(stack_t **stack, const int n)
 		(*stack)->prev = NewNode;
 		NewNode->next = *stack;
 	}
-	*stack = NewNode;
+	if (var.queue == 0 || var.stack_len == 0)
+		*stack = NewNode;
 	return (NewNode);
 }

@@ -1,4 +1,25 @@
 #include "monty.h"
+#include <ctype.h>
+/**
+ * check_for_digit - che
+ * 
+ * @param arg 
+ * @return int 
+ */
+static int check_for_digit(const char *arg)
+{
+	int iter;
+
+	for (iter = 0; arg[iter]; iter++)
+	{
+		if (arg[iter] == '-' && iter == 0)
+			continue;
+		if (isdigit(arg[iter]) == 0)
+			return (1);
+	}
+	return (0);
+}
+
 /**
  * _push - add node to the stack allocated
  * @stack: ...
@@ -10,7 +31,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	int n;
 
 	arg = strtok(NULL, " \t\r\n");
-	if (arg == NULL)
+	if (arg == NULL || check_for_digit(arg))
 	{
 		printf("L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

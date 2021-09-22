@@ -1,4 +1,7 @@
 #include "monty.h"
+/* global struct to hold flag for queue and stack length */
+var_t var;
+
 /**
  * main - main program
  * @argc: ...
@@ -25,17 +28,15 @@ int main(int argc, char *argv[])
 	if (files == NULL)
 		exit(EXIT_FAILURE);
 
+	on_exit(free_stack, &stack);
+	on_exit(f_close, files);
+	on_exit(free_line, &line);
 	while (getline(&line, &line_len, files) != -1)
 	{
 		line_num++;
 		token = strtok(line, "\n\t\r ");
 		if (token != NULL && token[0] != '#')
 			get_funs(token, &stack, line_num);
-		free(line);
-		line = NULL;
 	}
-	free_stack(&stack);
-	free(line);
-	fclose(files);
 	exit(EXIT_SUCCESS);
 }

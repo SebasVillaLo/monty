@@ -13,6 +13,7 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 		{"pop", _pop},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"swap", n_swap},
 		{"nop", _nop},
 		{NULL, NULL}
 	};
@@ -25,5 +26,6 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
+	dprintf(STDOUT_FILENO, "L%u: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }

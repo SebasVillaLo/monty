@@ -20,8 +20,8 @@ typedef struct var_s
 	int queue;
 	size_t stack_len;
 } var_t;
-/*global var*/
-var_t var;
+/* global struct to hold flag for queue and stack length */
+extern var_t var;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -63,7 +63,11 @@ void _pall(stack_t **stack, unsigned int line_munber);
 /*add_node.c*/
 stack_t *add_node(stack_t **stack, const int n);
 /*free.c*/
-void free_stack(stack_t **stack);
+void free_stack(int status, void *arg);
+void free_line(int status, void *arg);
+void f_close(int status, void *arg);
+/*swap.c*/
+void n_swap(stack_t **stack, unsigned int line_number);
 /*nop.c*/
 void _nop(stack_t **stack, unsigned int line_number);
 
