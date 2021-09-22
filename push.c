@@ -1,10 +1,10 @@
 #include "monty.h"
 #include <ctype.h>
 /**
- * check_for_digit - che
- * 
- * @param arg 
- * @return int 
+ * check_for_digit - checks that a string only contains digits
+ * @arg: string to check
+ *
+ * Return: 0 if only digits, else 1
  */
 static int check_for_digit(const char *arg)
 {

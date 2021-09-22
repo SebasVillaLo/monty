@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * free_stack - free the stack allocated
- * @stack: the stack allocated
- * Return: void
+ * @status: status exit
+ * @arg: arguments
  */
 void free_stack(int status, void *arg)
 {
@@ -25,7 +25,11 @@ void free_stack(int status, void *arg)
 	}
 	var.stack_len = 0;
 }
-
+/**
+ * free_line - Free the line
+ * @status: the exit
+ * @arg: the line
+ */
 void free_line(int status, void *arg)
 {
 	char **line = arg;
@@ -34,7 +38,11 @@ void free_line(int status, void *arg)
 	if (*line != NULL)
 		free(*line);
 }
-
+/**
+ * f_close - Close the file
+ * @status: the exit
+ * @arg: the file
+ */
 void f_close(int status, void *arg)
 {
 	FILE *file;
