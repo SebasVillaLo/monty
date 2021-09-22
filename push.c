@@ -33,7 +33,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	arg = strtok(NULL, " \t\r\n");
 	if (arg == NULL || check_for_digit(arg))
 	{
-		dprintf(STDOUT_FILENO,"L%u: usage: push integer\n", line_number);
+		dprintf(STDOUT_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(arg);
