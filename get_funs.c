@@ -1,9 +1,11 @@
 #include "monty.h"
 /**
- * get_funs - Get the funs object
- * @token: ...
- * @stack: ...
- * @line_number: ...
+ * get_op - check op against valid opcodes
+ * @token: token to check
+ * @stack: double pointer to the beginnig of the stack
+ * @line_number: script line number
+ *
+ * Return: void
  */
 void get_funs(char *token, stack_t **stack, unsigned int line_number)
 {

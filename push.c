@@ -21,9 +21,11 @@ static int check_for_digit(const char *arg)
 }
 
 /**
- * _push - add node to the stack allocated
- * @stack: ...
- * @line_number: ...
+ * _push - push an integer onto the stack
+ * @stack: double pointer to the beginning of the stack
+ * @line_number: script line number
+ *
+ * Return: void
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
