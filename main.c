@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 	size_t line_len = 0;
 	unsigned int line_num = 0;
 
-	var.queue = 0;
 	var.stack_len = 0;
 	if (argc != 2)
 	{

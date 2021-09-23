@@ -17,7 +17,6 @@
  */
 typedef struct var_s
 {
-	int queue;
 	size_t stack_len;
 } var_t;
 /* global struct to hold flag for queue and stack length */
