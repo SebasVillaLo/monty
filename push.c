@@ -29,19 +29,35 @@ static int check_for_digit(const char *arg)
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
+	stack_t *new_node;
 	char *arg;
-	int n;
 
-	arg = strtok(NULL, " \t\r\n");
-	if (arg == NULL || check_for_digit(arg))
+	arg = strtok(NULL, " \n\t\r");
+	if (arg == NULL || integer(arg))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	n = atoi(arg);
-	if (add_node(stack, n) == NULL)
+
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
 	{
 		exit(EXIT_FAILURE);
 	}
+
+	new_node->n = atoi(arg);
+	if (*stack == NULL)
+	{
+		new_node->prev = new_node;
+		new_node->next = new_node;
+	}
+	else
+	{
+		(*stack)->prev->next = new_node;
+		new_node->prev = (*stack)->prev;
+		(*stack)->prev = new_node;
+		new_node->next = *stack;
+	}
+	*stack = new_node;
 	var.stack_len++;
 }
