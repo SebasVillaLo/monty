@@ -71,8 +71,10 @@ void n_swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 /*nop.c*/
 void _nop(stack_t **stack, unsigned int line_number);
-
+/*pint.c*/
 void _pint(stack_t **stack, unsigned int line_number);
 /*sub.c*/
 void _sub(stack_t **stack, unsigned int line_number);
+/*div.c*/
+void _div(stack_t **stack, unsigned int line_number);
 #endif /*_MONTY_H_*/
