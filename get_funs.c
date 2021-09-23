@@ -18,6 +18,7 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 		{"swap", n_swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 
