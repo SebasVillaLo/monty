@@ -12,7 +12,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 
 	if (var.stack_len == 0 || !stack || !*stack)
 	{
-		dprintf(STDOUT_FILENO, "L%u: can't pint, stack empty", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty", line_number);
 		exit(EXIT_FAILURE);
 	}
 

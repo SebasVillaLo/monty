@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	var.stack_len = 0;
 	if (argc != 2)
 	{
-		dprintf(STDOUT_FILENO, "Usage: monty file\n");
+		fprintf(stderr, "Usage: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 

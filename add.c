@@ -12,7 +12,7 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	if (var.stack_len < 2)
 	{
-		dprintf(STDOUT_FILENO,
+		fprintf(stderr,
 			"L%u: can't add, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);

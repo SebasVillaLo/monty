@@ -29,6 +29,6 @@ void get_funs(char *token, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	dprintf(STDOUT_FILENO, "L%u: unknown instruction %s\n", line_number, token);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
