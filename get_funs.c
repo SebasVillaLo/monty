@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * get_op - check op against valid opcodes
+ * get_funs - check op against valid opcodes
  * @token: token to check
  * @stack: double pointer to the beginnig of the stack
  * @line_number: script line number
